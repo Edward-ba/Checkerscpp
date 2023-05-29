@@ -34,15 +34,10 @@ link_directories (/usr/lib)
 link_directories (/usr/local/lib)
 
 add_executable(checkers
-  checkers/main.cpp
-  checkers/src/piece.cpp
-)
-
-add_executable(checkers1
-    checkers1/main.cpp
-    checkers1/src/piece.cpp
-    checkers1/src/coordinate.cpp
-    checkers1/src/pawn.cpp
-    checkers1/src/king.cpp
-    checkers1/src/board.cpp
+    checkers/main.cpp
+    checkers/src/piece.cpp
+    checkers/src/coordinate.cpp
+    checkers/src/pawn.cpp
+    checkers/src/king.cpp
+    checkers/src/board.cpp
 )
