@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.1.0)
-project (chopsticks)
+project (cpp1)
 
 # Set Configuration specific DEFINES
 IF ( CMAKE_BUILD_TYPE STREQUAL "Debug" ) 
@@ -33,6 +33,16 @@ include_directories (/usr/local/include)
 link_directories (/usr/lib)
 link_directories (/usr/local/lib)
 
-add_executable(chopsticks
-    main/main.cpp
-    main/src/node.cpp)
+add_executable(checkers
+  checkers/main.cpp
+  checkers/src/piece.cpp
+)
+
+add_executable(checkers1
+    checkers1/main.cpp
+    checkers1/src/piece.cpp
+    checkers1/src/coordinate.cpp
+    checkers1/src/pawn.cpp
+    checkers1/src/king.cpp
+    checkers1/src/board.cpp
+)
