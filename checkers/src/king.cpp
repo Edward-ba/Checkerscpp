@@ -19,20 +19,20 @@ King::~King() {
 
 
 
-move_ret_values King::move(Coordinate beg, dir d) {
+std::pair<Coordinate, Coordinate> King::move(Coordinate beg, dir d) {
     if (d == nw) {
-        return move_ret_values{Coordinate(beg.get_row() - 1, beg.get_col() - 1), Coordinate(beg.get_row() - 2, beg.get_col() - 2)};
+        return std::make_pair(Coordinate(beg.get_row() - 1, beg.get_col() - 1), Coordinate(beg.get_row() - 2, beg.get_col() - 2));
     }
     if (d == ne) {
-        return move_ret_values{Coordinate(beg.get_row() - 1, beg.get_col() + 1), Coordinate(beg.get_row() - 2, beg.get_col() + 2)};
+        return std::make_pair(Coordinate(beg.get_row() - 1, beg.get_col() + 1), Coordinate(beg.get_row() - 2, beg.get_col() + 2));
     }
     if (d == se) {
-        return move_ret_values{Coordinate(beg.get_row() + 1, beg.get_col() + 1), Coordinate(beg.get_row() + 2, beg.get_col() + 2)};
+        return std::make_pair(Coordinate(beg.get_row() + 1, beg.get_col() + 1), Coordinate(beg.get_row() + 2, beg.get_col() + 2));
     }
     if (d == sw) {
-        return move_ret_values{Coordinate(beg.get_row() + 1, beg.get_col() - 1), Coordinate(beg.get_row() + 2, beg.get_col() - 2)};
+        return std::make_pair(Coordinate(beg.get_row() + 1, beg.get_col() - 1), Coordinate(beg.get_row() + 2, beg.get_col() - 2));
     }
-    return move_ret_values{Coordinate(-1, -1), Coordinate(-1, -1)};
+    return std::make_pair(Coordinate(-1, -1), Coordinate(-1, -1));
 }
 
 

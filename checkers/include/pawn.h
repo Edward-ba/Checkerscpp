@@ -8,6 +8,6 @@ public:
     Pawn(color c);
     ~Pawn();
 
-    move_ret_values move(Coordinate beg, dir d);
+    std::pair<Coordinate, Coordinate> move(Coordinate beg, dir d);
     void print(std::ostream& os);
 };

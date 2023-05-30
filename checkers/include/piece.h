@@ -1,10 +1,10 @@
 #pragma once
 #include "coordinate.h"
 
-struct move_ret_values{
-    Coordinate mid;
-    Coordinate kill;
-};
+// struct move_ret_values{
+//     Coordinate mid;
+//     Coordinate kill;
+// };
 
 class Piece
 {
@@ -15,7 +15,7 @@ public:
     Piece(color c);
     virtual ~Piece();
 
-    virtual move_ret_values move(Coordinate beg, dir d) = 0;
+    virtual std::pair<Coordinate, Coordinate> move(Coordinate beg, dir d) = 0;
 
     virtual void print(std::ostream& os) = 0;
     color get_color() { return color_;};

@@ -78,45 +78,45 @@ bool Board::check_win() {
 
 void Board::print_board(std::ostream& os) {
     os << "  ";
-        for (int i = 0; i < board_.size(); ++i) {
-            os << "  " << i << " ";
-        }
-        os << std::endl;
-        os << "  ┌";
-        for (int i = 0; i < board_.size() - 1; ++i) {
-            os << "───┬";
-        }
-        os << "───┐";
-        os << std::endl;
-        for (int i = 0; i < board_.size(); ++i) {
-            os << i << " │ ";
-            for (int j = 0; j < board_.size(); ++j) {
-                if (nullptr != board_[i][j]) {
-                    board_[i][j]->print(os);
-                    os << " │ ";
-                }
-                else {
-                    os << "  │ ";
-                }
+    for (int i = 0; i < board_.size(); ++i) {
+        os << "  " << i << " ";
+    }
+    os << std::endl;
+    os << "  ┌";
+    for (int i = 0; i < board_.size() - 1; ++i) {
+        os << "───┬";
+    }
+    os << "───┐";
+    os << std::endl;
+    for (int i = 0; i < board_.size(); ++i) {
+        os << i << " │ ";
+        for (int j = 0; j < board_.size(); ++j) {
+            if (nullptr != board_[i][j]) {
+                board_[i][j]->print(os);
+                os << " │ ";
             }
-            os << std::endl;
-            if (i != board_.size() - 1)
-                os << "  ├";
+            else {
+                os << "  │ ";
+            }
+        }
+        os << std::endl;
+        if (i != board_.size() - 1)
+            os << "  ├";
+        else
+            os << "  └";
+        for (int j = 0; j < board_.size(); ++j) {
+            os << "───";
+            if (i == board_.size() - 1 && j == board_.size() - 1)
+                os << "┘";
+            else if (i == board_.size() - 1)
+                os << "┴";
+            else if (j == board_.size() - 1)
+                os << "┤";
             else
-                os << "  └";
-            for (int j = 0; j < board_.size(); ++j) {
-                os << "───";
-                if (i == board_.size() - 1 && j == board_.size() - 1)
-                    os << "┘";
-                else if (i == board_.size() - 1)
-                    os << "┴";
-                else if (j == board_.size() - 1)
-                    os << "┤";
-                else
-                    os << "┼";
-            }
-            os << std::endl;
+                os << "┼";
         }
+        os << std::endl;
+    }
 }
 
 bool Board::move(Coordinate beg, dir d, color c) {

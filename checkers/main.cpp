@@ -38,12 +38,11 @@
 
 int main(int argc, char* argv[]) {
     Board board;
-    board.print_board(std::cout);
-
     
+    board.move(Coordinate(2, 2), sw, black);
 
     board.print_board(std::cout);
-
+    
     // {
     //     Piece* p = new Pawn();
     //     p->print();
