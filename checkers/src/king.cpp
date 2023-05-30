@@ -17,8 +17,6 @@ King::~King() {
     // std::cout << "destruct King " << color_ << std::endl;
 }
 
-
-
 std::pair<Coordinate, Coordinate> King::move(Coordinate beg, dir d) {
     if (d == nw) {
         return std::make_pair(Coordinate(beg.get_row() - 1, beg.get_col() - 1), Coordinate(beg.get_row() - 2, beg.get_col() - 2));

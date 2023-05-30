@@ -17,8 +17,6 @@ Pawn::~Pawn() {
     // std::cout << "destruct pawn " << color_ << std::endl;
 }
 
-
-
 std::pair<Coordinate, Coordinate> Pawn::move(Coordinate beg, dir d) {
     if (white == color_) {
         if (d == nw) {

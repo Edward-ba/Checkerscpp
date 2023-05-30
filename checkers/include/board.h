@@ -5,8 +5,7 @@
 #include "pawn.h"
 #include "king.h"
 
-class Board
-{
+class Board {
     std::vector<std::vector<Piece*>> board_; 
 
 public:

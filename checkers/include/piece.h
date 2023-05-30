@@ -1,11 +1,6 @@
 #pragma once
 #include "coordinate.h"
 
-// struct move_ret_values{
-//     Coordinate mid;
-//     Coordinate kill;
-// };
-
 class Piece
 {
 protected:
