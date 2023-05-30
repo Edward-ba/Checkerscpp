@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
     Board board;
     board.print_board(std::cout);
 
-    board.move(Coordinate(2, 2), se, white);
+    
 
     board.print_board(std::cout);
 

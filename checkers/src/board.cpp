@@ -82,35 +82,38 @@ void Board::print_board(std::ostream& os) {
             os << "  " << i << " ";
         }
         os << std::endl;
-        os << "  —";
-        for (int i = 0; i < board_.size(); ++i) {
-            os << " — —";
+        os << "  ┌";
+        for (int i = 0; i < board_.size() - 1; ++i) {
+            os << "───┬";
         }
+        os << "───┐";
         os << std::endl;
         for (int i = 0; i < board_.size(); ++i) {
-            os << i << " | ";
+            os << i << " │ ";
             for (int j = 0; j < board_.size(); ++j) {
                 if (nullptr != board_[i][j]) {
                     board_[i][j]->print(os);
-                    os << " | ";
+                    os << " │ ";
                 }
                 else {
-                    os << "  | ";
+                    os << "  │ ";
                 }
             }
             os << std::endl;
             if (i != board_.size() - 1)
-                os << "  |";
+                os << "  ├";
             else
-                os << "  —";
+                os << "  └";
             for (int j = 0; j < board_.size(); ++j) {
-                os << " — ";
-                if (i == board_.size() - 1)
-                    os << "—";
+                os << "───";
+                if (i == board_.size() - 1 && j == board_.size() - 1)
+                    os << "┘";
+                else if (i == board_.size() - 1)
+                    os << "┴";
                 else if (j == board_.size() - 1)
-                    os << "|";
+                    os << "┤";
                 else
-                    os << "+";
+                    os << "┼";
             }
             os << std::endl;
         }
@@ -121,7 +124,7 @@ bool Board::move(Coordinate beg, dir d, color c) {
             beg.get_row() >= board_[0].size() || 
             beg.get_col() < 0 || 
             beg.get_col() >= board_.size() || 
-            beg.get_row() + beg.get_col() % 2 != 0) {
+            (beg.get_row() + beg.get_col()) % 2 != 0) {
         return false;
     }
     auto [mid, kill] = board_[beg.get_row()][beg.get_col()]->move(beg, d);
