@@ -1,7 +1,7 @@
 #pragma once
 
 enum color {none, white, black};
-enum dir  {ne, se, sw, nw};
+enum dir  {ne = 0, se, sw, nw};
 
 class Coordinate {
     int row_;

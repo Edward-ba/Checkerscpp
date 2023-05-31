@@ -36,10 +36,10 @@ std::pair<Coordinate, Coordinate> King::move(Coordinate beg, dir d) {
 
 void King::print(std::ostream& os) {
     if (color_ == white) {
-        os << "w";
+        os << "W";
     }
     else if (color_ == black) {
-        os << "b";
+        os << "B";
     }
     else {
         os << " ";

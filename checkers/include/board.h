@@ -18,7 +18,8 @@ public:
     void clear_board1();
     void clear_board2();
     void clear_board3();
-
+    
+    void promote_pieces();
     bool check_win();
     bool move(Coordinate beg, dir d, color c);
 };
