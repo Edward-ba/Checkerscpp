@@ -6,6 +6,10 @@
 #include "king.h"
 
 class Board {
+ 
+    friend class BoardTest_Test0_Test;
+    friend class BoardTest_Test1_Test;
+
     std::vector<std::vector<Piece*>> board_; 
 
 public:

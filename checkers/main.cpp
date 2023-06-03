@@ -1,16 +1,12 @@
 #include <iostream>
-#include "./include/board.h"
-#include "./include/pawn.h"
-#include "./include/king.h"
-#include "./include/coordinate.h"
+#include "../checkerslib/include/board.h"
+#include "../checkerslib/include/pawn.h"
+#include "../checkerslib/include/king.h"
+#include "../checkerslib/include/coordinate.h"
 
 int main(int argc, char* argv[]) {
     Board board;
-
     board.print_board(std::cout);
-
-
-    return 1;
 
     int r, c;
     int d;
@@ -38,3 +34,4 @@ int main(int argc, char* argv[]) {
         board.print_board(std::cout);
     }
 }
+
